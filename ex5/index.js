@@ -19,3 +19,31 @@ server.listen(port, function (error) {
  console.log('Server is listening on port' + port);
  }
 });
+
+var admin = require("firebase-admin");
+
+var serviceAccount = require("exercise-5-5cbbf-firebase-adminsdk-r31fm-39915fc2f5.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://exercise-5-5cbbf-default-rtdb.firebaseio.com"
+});
+
+/*
+// Get a database reference to our blog
+const { getDatabase } = require('firebase-admin/database');
+const db = getDatabase();
+const ref = db.ref('server/saving-data/');
+const usersRef = ref.child('users');
+usersRef.set({
+ alanisawesome: {
+ date_of_birth: 'June 23, 1912',
+ full_name: 'Alan Turing'
+ },
+ gracehop: {
+ date_of_birth: 'December 9, 1906',
+ full_name: 'Grace Hopper'
+ }
+})
+;
+*/
