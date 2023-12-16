@@ -20,16 +20,16 @@ server.listen(port, function (error) {
  }
 });
 
-var admin = require("./exercise-5-5cbbf-firebase-adminsdk-r31fm-39915fc2f5.json");
+var admin = require("firebase-admin");
 
-var serviceAccount = require("exercise-5-5cbbf-firebase-adminsdk-r31fm-39915fc2f5.json");
+var serviceAccount = require("/etc/secrets/exercise-5-5cbbf-firebase-adminsdk-r31fm-39915fc2f5.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://exercise-5-5cbbf-default-rtdb.firebaseio.com"
 });
 
-/*
+
 // Get a database reference to our blog
 const { getDatabase } = require('firebase-admin/database');
 const db = getDatabase();
@@ -46,4 +46,4 @@ usersRef.set({
  }
 })
 ;
-*/
+
