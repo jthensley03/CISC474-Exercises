@@ -20,7 +20,7 @@ server.listen(port, function (error) {
  }
 });
 
-var admin = require("firebase-admin");
+var admin = require("./exercise-5-5cbbf-firebase-adminsdk-r31fm-39915fc2f5.json");
 
 var serviceAccount = require("exercise-5-5cbbf-firebase-adminsdk-r31fm-39915fc2f5.json");
 
